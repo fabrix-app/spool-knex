@@ -38,17 +38,25 @@ module.exports = _.defaultsDeep({
     },
     main: {
       spools: [
-        require('../dist').KnexSpool // spool-knex
+        require('../../dist/index').KnexSpool // spool-knex
       ]
     },
     stores: {
       teststore: {
         orm: 'knex',
-        migrate: 'drop',
-        client: 'sqlite3',
+        client: 'pg',
+
+        /**
+         * knex connection object
+         * see: http://knexjs.org/#Installation-client
+         */
         connection: {
-          filename: './testdb.sqlite'
-        }
+          host: 'localhost',
+          // user: 'admin',
+          // password: '1234',
+          database: 'Knex'
+        },
+        migrate: 'drop'
       }
     },
     models: {

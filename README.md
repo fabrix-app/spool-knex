@@ -35,6 +35,7 @@ export const main = {
 // config/stores.ts
 export const stores = {
   knexPostgres: {
+    orm: 'knex',
     client: 'pg',
 
     /**

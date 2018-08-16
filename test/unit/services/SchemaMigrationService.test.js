@@ -10,15 +10,17 @@ describe('SchemaMigrationService', () => {
   describe('#create', () => {
     it('should create tables', () => {
       return Promise.all(_.map(global.app.models, model => {
-        console.log('store', model.store)
-        const store = global.app.spools.knex.stores[model.store]
 
-        console.log('created table?', model.getTableName())
-        return store.knex.schema.hasTable(model.getTableName())
-          .then(exists => {
-            console.log('table exists?', exists)
-            return exists ? Promise.resolve() : Promise.reject()
-          })
+        if (global.app.spools.knex.stores.has([model.store])) {
+          const store = global.app.spools.knex.stores.get([model.store])
+
+          console.log('created table?', model.tableName)
+          return store.knex.schema.hasTable(model.tableName)
+            .then(exists => {
+              console.log('table exists?', exists)
+              return exists ? Promise.resolve() : Promise.reject()
+            })
+        }
       }))
     })
   })

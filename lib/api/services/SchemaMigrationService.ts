@@ -15,9 +15,9 @@ export class SchemaMigrationService extends Service {
     return knex.transaction(txn => {
       return Promise.all(map(models, model => {
         this.app.log.debug('SchemaMigrationService: performing "drop" migration',
-          'for model', model.getModelName())
+          'for model', model.name)
 
-        return txn.schema.dropTableIfExists(model.getTableName())
+        return txn.schema.dropTableIfExists(model.tableName)
       }))
     })
   }
@@ -31,16 +31,16 @@ export class SchemaMigrationService extends Service {
     return knex.transaction(txn => {
       return Promise.all(map(models, model => {
         this.app.log.debug('SchemaMigrationService: performing "create" migration',
-          'for model', model.getModelName())
+          'for model', model.name)
 
-        return txn.schema.hasTable(model.getTableName())
+        return txn.schema.hasTable(model.tableName)
           .then(exists => {
             if (exists) {
               return
             }
 
-            return txn.schema.createTable(model.getTableName(), table => {
-              return model.constructor.schema(table)
+            return txn.schema.createTable(model.tableName, table => {
+              return model.constructor.schema(this.app, table)
             })
           })
       }))
