@@ -52,9 +52,9 @@ module.exports = _.defaultsDeep({
          */
         connection: {
           host: 'localhost',
-          // user: 'admin',
-          // password: '1234',
-          database: 'Knex'
+          user: process.env.POSTGRES_USER || null,
+          password: process.env.POSTGRES_PASSWORD,
+          database: process.env.POSTGRES_DB || 'Knex'
         },
         migrate: 'drop'
       }
