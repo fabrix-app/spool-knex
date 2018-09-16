@@ -1,6 +1,6 @@
 {
   "name": "@fabrix/spool-knex",
-  "version": "1.1.0",
+  "version": "1.5.0",
   "description": "Spool: Knex Datastore",
   "homepage": "https://github.com/fabrix-app/spool-passport",
   "author": {
@@ -33,11 +33,11 @@
   ],
   "dependencies": {
     "knex": "0.15.2",
-    "lodash": "^4.0.0",
+    "lodash": "^4.17.11",
     "node-uuid": "^1.4.8"
   },
   "devDependencies": {
-    "@fabrix/fabrix": "^1.1.4",
+    "@fabrix/fabrix": "^1.5.2",
     "@fabrix/lint": "^1.0.0-alpha.3",
     "@types/lodash": "^4.14.109",
     "@types/node": "~10.3.4",
@@ -46,7 +46,7 @@
     "nyc": "^12.0.2",
     "sails-disk": "^0.10.10",
     "smokesignals": "^2.0.0",
-    "sqlite3": "^4.0.1",
+    "sqlite3": "^4.0.2",
     "supertest": "3.0.0",
     "tslib": "~1.9.0",
     "tslint": "~5.10.0",
@@ -55,7 +55,7 @@
     "typescript": "~2.8.1"
   },
   "peerDependencies": {
-    "@fabrix/fabrix": "^1.1.4"
+    "@fabrix/fabrix": "^1.5.2"
   },
   "engines": {
     "node": ">= 7.6.0"
