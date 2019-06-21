@@ -1,4 +1,4 @@
-import * as knex from 'knex'
+import knex from 'knex'
 import { DatastoreSpool } from '@fabrix/fabrix/dist/common/spools/datastore'
 import { pickBy, mapValues, map } from 'lodash'
 import { Utils } from './utils'
