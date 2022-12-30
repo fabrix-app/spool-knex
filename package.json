@@ -42,7 +42,7 @@
     "@types/lodash": "^4.14.109",
     "@types/node": "~10.3.4",
     "pg": "^6.4.2",
-    "mocha": "^6",
+    "mocha": "^10",
     "nyc": "^14.1.1",
     "sails-disk": "^0.10.10",
     "smokesignals": "^2.0.0",
