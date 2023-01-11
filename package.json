@@ -32,7 +32,7 @@
     "test"
   ],
   "dependencies": {
-    "knex": "0.19.5",
+    "knex": "2.4.0",
     "lodash": "^4.17.11",
     "node-uuid": "^1.4.8"
   },
